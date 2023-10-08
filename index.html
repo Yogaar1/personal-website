@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/baad888a4c.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Ubuntu&display=swap"
+            rel="stylesheet">
+        <title>Website Portofolio</title>
+        <style>
+            body {
+                background-image: url("background.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+            }
+
+            nav {
+                position: absolute;
+                top: 30px;
+                right: 40px;
+            }
+
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin-right: 40px;
+                color: #fff;
+                font-size: 16 px;
+                font-family: 'Inria Sans', sans-serif;
+                font-family: 'Ubuntu', sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #fff;
+
+            }
+
+            nav ul li :hover {
+                text-decoration: underline;
+            }
+            .container {
+                padding-top: 50px;
+                margin: 0 auto;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+            }
+            h1 {
+                font-family: 'Inria Sans', sans-serif;
+                font-size: 50px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+                color: rgba(255, 255, 255, 0.1);
+                -webkit-text-stroke: 1px #fff;
+            }
+
+            span {
+                font-weight: bold;
+                color: #fff;
+            }
+            p {
+                font-size: 18px;
+                font-family: 'Inria Sans', sans-serif;
+                font-family: 'Ubuntu', sans-serif;
+                font-weight: bold;
+                text-align: center;
+                color: #fff;
+                white-space: nowrap;
+                overflow: hidden;
+                animation: type 10s steps(40, end);
+            }
+
+            @keyframes type {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+            .arrow {
+                display: flex;
+                align-items: center;
+                margin-top: 70px;
+            }
+
+            .arrow i {
+                margin-right: 10px;
+            }
+
+            .arrow a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portofolio.html">Portofolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1>Hii I’m
+                <span>Yoga Ari Nugroho</span>
+                <br>You can call me
+                <span>Yoga</span></h1>
+            <p id="typing-text"></p>
+            <div class="arrow">
+                <i class="fa-solid fa-arrow-right" style="color: #ffffff;"></i>
+                <a href="about.html">more about me</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const text = "I'm a UI/UX designer and Fullstack Developer";
+        const textElement = document.getElementById('typing-text');
+
+        function typeWriter() {
+            let charIndex = 0;
+            const typingInterval = 100;
+
+            function type() {
+                if (charIndex < text.length) {
+                    textElement.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingInterval);
+                }
+            }
+
+            type();
+        }
+
+        window.addEventListener('load', () => {
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
